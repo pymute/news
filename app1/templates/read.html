@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>PRO</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pro in proks %}
+      <tr>
+        <td>{{ pro.title }}</td>
+        <td>{{ pro.author }}</td>
+        <td>
+          <a href="{{ url_for('pro_edit', id=pro.id) }}">Edit</a>
+          <a href="{{ url_for('pro_delete', id=pro.id) }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('pro_new') }}">Add New Pro</a>
+</body>
+</html>
