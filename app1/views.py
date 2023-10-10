@@ -5,7 +5,7 @@ from .form import ProjectForm
 
 def pro_list(request):
     pro = Project.objects.all()
-    return render(request, 'templates/read.html', {'pro': pro})
+    return render(request, 'my_temp/read.html', {'pro': pro})
 
 def pro_detail(request, pk):
     pro = get_object_or_404(Project, pk=pk)
